@@ -11,7 +11,7 @@
 // To run a file, run in the console: node hello.js
 
 // 3. How to print?
-console.log("Hi #1638")
+// console.log("Hi #1715");
 
 // //////////////////
 // RUBY VS JAVASCRIPT
@@ -20,61 +20,68 @@ console.log("Hi #1638")
 // 1. var, const, let and the lower camel case
 
 // 'const' CANNOT be reassigned
-const student = "Stan";
-// student = "Super Stan";
+const student = "Steven";
+// student = "Super Steven";
 console.log(student);
 
 // 'let' CAN be reassigned
-let age = 19;
+let age = 21;
+// age = age + 1;
 age += 1;
 console.log(age);
 
-// 'var' is the obsolete let (almost!)
+// 'var' is the obsolete 'let' (almost!)
 
 // 2. interpolation
 // Note: use backticks (`) for interpolation
-console.log(`${student} is ${age} years-old.`);
+console.log(`${student} is ${age} years-old`);
 
 // 3. no float/integer
-console.log(typeof(42))
-console.log(typeof(42.234))
+console.log(typeof(42));
+console.log(typeof(42.34));
 
 // 4. how toString/parseInt works
 // Note: toString doesn’t work without ()
+console.log(   (42).toString()  );
+console.log(   parseInt('101', 10)  );
 
-// to_s
-console.log((42).toString());
-console.log(parseInt("42", 10));
 
-// can be used to convert into binary
-console.log(parseInt("11", 2));
-// 0 -> 0
-// 1 -> 1
-// 2 -> 10
-// 3 -> 11
+// can be used to convert into binary (= base 2)
+// 000
+// 001
+// 010
+// 011
+// 100
+console.log(   parseInt('101', 2)  );
+
 
 // 5. delete element in an array with splice
 const students = [
-  "Shuxing",
-  "Yoana",
-  "Stan",
-  "Kim"
+  "Yuta",
+  "Yu",
+  "Joe",
+  "Ali"
 ];
 
-students.splice(2, 1); // deleting 1 element from element of index 2 
+// students << "David"
+students.push("David");
+
+// students.splice(1); // from index 1, delete everything
+// students.splice(1, 2); // from index 1, delete 2 elements
 console.log(students);
 
-
 // 6. iterate over an array
-// JS arrow function () => {}
 
+// Reminder: in ruby 👇
 // students.each do |student|
 //   puts "#{student} is amazing!"
 // end
 
+// JS arraow function: () => {}
 students.forEach((student) => {
   console.log(`${student} is amazing!`);
 });
+
 
 // 7. join() returns adds commas
 // [1,2,3].join()
@@ -84,44 +91,42 @@ students.forEach((student) => {
 
 // 8. object, the magic dot!
 const anotherStudent = {
-  firstName: "Rei",
-  lastName: "Watanabe" 
+  firstName: "Sunjung",
+  lastName: "Hwang" 
 };
 
 console.log(anotherStudent["firstName"]);
 console.log(anotherStudent.firstName);
 
-anotherStudent.firstName = "Super Rei"
+anotherStudent.firstName = "Super Sunjung";
+anotherStudent.age = 21;
 console.log(anotherStudent);
 
 // 9. === VS ==
 // sameness in JS: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 
-console.log(3 == 4);
-console.log(3 === 4);
 
-console.log(3 == "3");
-console.log(3 === "3");
 
 // 10. the JS falsies:
-if ("") {
+if (0) {
   console.log("this is truthy");
 }
 
-false // false
-null // nil
-undefined
+null //nil
+false //false
 ""
-0
 NaN
+0
 
 // 11. JS arrow functions () => {}
 // Note: they look like a 'very special' variable
 
-const square = (num) => {
-  return num * num; // return is mandatory
-};
+// const square = (number) => {
+//   return number * number;
+// };
 
-// const square = num => num * num;
+const square = number => number * number;
 
-console.log(square(12));
+console.log(square(42));
+console.log(square(3));
+console.log(square(101));
